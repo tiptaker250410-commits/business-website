@@ -65,7 +65,7 @@
         }
 
         /* Main Content */
-        .container {
+        .hero-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
@@ -139,6 +139,7 @@
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -218,9 +219,147 @@
             margin-top: 2rem;
         }
 
+        /* SNS Links Section */
+        .sns-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .sns-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .sns-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .sns-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sns-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.2);
+        }
+
+        .sns-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sns-card h3 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sns-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .sns-card a:hover {
+            background: #1565c0;
+        }
+
+        /* Consultation Section */
+        .consultation-section {
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            color: white;
+        }
+
+        .consultation-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .consultation-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .consultation-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .consultation-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .btn-consultation {
+            background: white;
+            color: #1976d2;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-consultation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
-            .container {
+            .hero-section {
                 grid-template-columns: 1fr;
                 padding: 2rem 1rem;
                 gap: 2rem;
@@ -244,6 +383,15 @@
             .cta-buttons {
                 flex-direction: column;
             }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .consultation-features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -257,14 +405,14 @@
         <nav>
             <a href="#소개">소개</a>
             <a href="#경력">경력</a>
-            <a href="#커뮤니티">SNS</a>
-            <a href="#기록">기록</a>
+            <a href="#sns">SNS</a>
+            <a href="#상담">상담</a>
             <a href="#연락">연락</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
+    <!-- Hero Section -->
+    <main class="hero-section" id="소개">
         <!-- Left Side - Hero Content -->
         <div class="hero-content">
             <h1>
@@ -299,14 +447,14 @@
             </div>
 
             <div class="cta-buttons">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="document.getElementById('상담').scrollIntoView({behavior: 'smooth'})">
                     <span class="icon">💬</span>
-                    커뮤니티 참여하기
+                    상담 신청하기
                 </button>
-                <button class="btn btn-secondary">
-                    <span class="icon">📰</span>
-                    뉴스레터 구독
-                </button>
+                <a href="#sns" class="btn btn-secondary">
+                    <span class="icon">📱</span>
+                    SNS 팔로우
+                </a>
             </div>
 
             <p class="community-badge">
@@ -316,9 +464,78 @@
 
         <!-- Right Side - Profile -->
         <div class="profile-section">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 280'%3E%3Ccircle cx='140' cy='140' r='140' fill='%23a8d8ea'/%3E%3C/svg%3E" alt="멘토 직진" class="profile-image">
-            <!-- Note: Replace the above with actual profile image URL -->
+            <img src="profile.jpg" alt="멘토 직진" class="profile-image">
         </div>
     </main>
+
+    <!-- SNS Section -->
+    <section class="sns-section" id="sns">
+        <h2 class="sns-title">SNS에서 팔로우하세요</h2>
+        <div class="sns-links">
+            <div class="sns-card">
+                <div class="sns-icon">📱</div>
+                <h3>Threads</h3>
+                <p>일상과 취업 정보를 공유합니다</p>
+                <a href="https://www.threads.com/@jickjin2025" target="_blank">팔로우하기</a>
+            </div>
+            <div class="sns-card">
+                <div class="sns-icon">📸</div>
+                <h3>Instagram</h3>
+                <p>취업 준비 노하우를 공개합니다</p>
+                <a href="https://www.instagram.com/jickjin2025/" target="_blank">팔로우하기</a>
+            </div>
+            <div class="sns-card">
+                <div class="sns-icon">📝</div>
+                <h3>네이버 블로그</h3>
+                <p>자세한 취업 정보와 팁을 올립니다</p>
+                <a href="https://blog.naver.com/jickjin2025" target="_blank">방문하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section" id="상담">
+        <div class="consultation-content">
+            <h2>상담 신청</h2>
+            <p>공기업/공공기관 취업을 준비하는 분들을 위한 1:1 맞춤형 상담을 진행합니다.</p>
+            
+            <div class="consultation-features">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h4>목표 설정</h4>
+                    <p>당신의 취업 목표를 함께 분석하고 전략을 수립합니다</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h4>자기소개서 컨설팅</h4>
+                    <p>강점을 드러내는 자기소개서 작성법을 배웁니다</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎤</div>
+                    <h4>면접 준비</h4>
+                    <p>모의면접과 실전 팁으로 면접 자신감을 높입니다</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💼</div>
+                    <h4>직무 교육</h4>
+                    <p>공기업 직무에 대한 깊이 있는 이해를 돕습니다</p>
+                </div>
+            </div>
+
+            <button class="btn-consultation" onclick="alert('상담 신청 페이지로 이동합니다')">
+                지금 상담 신청하기
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: white; text-align: center; padding: 2rem; margin-top: 4rem;">
+        <p>&copy; 2024 멘토 직진. All rights reserved.</p>
+        <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+            <a href="https://www.threads.com/@jickjin2025" target="_blank" style="color: white; margin: 0 1rem; text-decoration: none;">Threads</a>
+            <a href="https://www.instagram.com/jickjin2025/" target="_blank" style="color: white; margin: 0 1rem; text-decoration: none;">Instagram</a>
+            <a href="https://blog.naver.com/jickjin2025" target="_blank" style="color: white; margin: 0 1rem; text-decoration: none;">Blog</a>
+        </div>
+    </footer>
 </body>
 </html>
