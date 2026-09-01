@@ -219,6 +219,123 @@
             margin-top: 2rem;
         }
 
+        /* Career Section */
+        .career-section {
+            background: white;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .career-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .career-title {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .career-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .career-text {
+            line-height: 2;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .career-text strong {
+            color: #1976d2;
+            font-weight: 600;
+        }
+
+        .career-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .career-text ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .career-text li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .career-text li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1976d2;
+            font-weight: bold;
+        }
+
+        .career-stats {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #1976d2;
+        }
+
+        .stat-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-label {
+            color: #1976d2;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
         /* SNS Links Section */
         .sns-section {
             max-width: 1200px;
@@ -357,6 +474,66 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        /* Contact Section */
+        .contact-section {
+            background: #f5f5f5;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .contact-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-btn {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-btn:hover {
+            border-color: #1976d2;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.2);
+        }
+
+        .contact-btn h3 {
+            color: #1976d2;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-btn p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-btn .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-section {
@@ -390,6 +567,14 @@
             }
 
             .consultation-features {
+                grid-template-columns: 1fr;
+            }
+
+            .career-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
                 grid-template-columns: 1fr;
             }
         }
@@ -468,6 +653,68 @@
         </div>
     </main>
 
+    <!-- Career Section -->
+    <section class="career-section" id="경력">
+        <div class="career-container">
+            <h2 class="career-title">멘토 직진의 경력</h2>
+            
+            <div class="career-content">
+                <div class="career-text">
+                    <p><strong>🏢 공기업 10년 경력</strong></p>
+                    <p>실제 취업 시장을 누구보다 가까이에서 보며 "취업은 열심히보다 방향이 더 중요하다"는 관점을 콘텐츠와 강의를 통해 전달하고 있습니다.</p>
+
+                    <p><strong>👥 전국 대학/지자체에서 1000명 이상 취업 멘토링</strong></p>
+
+                    <p><strong>📝 자기소개서 컨설팅</strong></p>
+                    <p><strong>🎤 모의면접 트레이닝</strong></p>
+                    <p><strong>💼 취업 상담 진행</strong></p>
+
+                    <p>수많은 공기업 취업 준비생, 이직희망자들에게 고퀄리티의 취업 컨텐츠를 제공하고 있습니다.</p>
+                </div>
+
+                <div class="career-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">🎬 2025년 8월 SNS 시작</div>
+                        <div class="stat-value">
+                            • 스레드 5천+ 팔로워<br>
+                            • 인스타그램 1.7만+ 팔로워
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-label">📊 콘텐츠 성과</div>
+                        <div class="stat-value">
+                            • 누적 조회수 도합 3,100만회<br>
+                            • 도달한 계정 336만명
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery - Universities -->
+            <div class="gallery-section">
+                <h3 class="gallery-title">멘토 직진이 지금까지 출강&멘토링한 대학교</h3>
+                <div class="gallery">
+                    <div class="gallery-item"><img src="university-logos-1.jpg" alt="대학교 로고 모음 1"></div>
+                </div>
+            </div>
+
+            <!-- Gallery - Institutions -->
+            <div class="gallery-section">
+                <h3 class="gallery-title">협력 기관</h3>
+                <div class="gallery">
+                    <div class="gallery-item"><img src="institution-logos-1.jpg" alt="기관 로고 모음 1"></div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <div class="gallery">
+                    <div class="gallery-item"><img src="institution-logos-2.jpg" alt="기관 로고 모음 2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SNS Section -->
     <section class="sns-section" id="sns">
         <h2 class="sns-title">SNS에서 팔로우하세요</h2>
@@ -525,6 +772,31 @@
             <button class="btn-consultation" onclick="alert('상담 신청 페이지로 이동합니다')">
                 지금 상담 신청하기
             </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="연락">
+        <div class="contact-container">
+            <h2 class="contact-title">협업 및 출강 문의</h2>
+            
+            <div class="contact-buttons">
+                <a href="mailto:jickjin2025@gmail.com" class="contact-btn">
+                    <h3>📧 이메일 문의</h3>
+                    <p>협업, 출강, 강의 문의는 이메일로 연락주세요</p>
+                    <button class="btn btn-primary" style="width: 100%;">
+                        jickjin2025@gmail.com
+                    </button>
+                </a>
+                
+                <a href="mailto:jickjin2025@gmail.com" class="contact-btn">
+                    <h3>🤝 제휴 문의</h3>
+                    <p>협력 기관, 제휴 제안 등 모든 문의를 받습니다</p>
+                    <button class="btn btn-primary" style="width: 100%;">
+                        문의하기
+                    </button>
+                </a>
+            </div>
         </div>
     </section>
 
